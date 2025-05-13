@@ -9,13 +9,11 @@ private:
     string cpf;
 
 public:
-    // Construtor
     Cliente(string nome, string cpf) {
         this->nome = nome;
         this->cpf = cpf;
     }
 
-    // Getters
     string getNome() const {
         return nome;
     }
@@ -33,7 +31,6 @@ private:
     Cliente titular;
 
 public:
-    // Construtor
     ContaBancaria(int numero, Cliente titular, double saldo = 0.0)
         : numero(numero), titular(titular), saldo(saldo) {}
 
@@ -82,7 +79,6 @@ public:
         }
     }
 
-    // Exibe o saldo
     void exibirSaldo() const {
         cout << "Saldo atual da conta " << numero << ": R$ " << saldo << endl;
     }
@@ -108,16 +104,12 @@ int main() {
     ContaBancaria conta2(1002, cliente2);
     ContaBancaria conta3(1003, cliente3);
 
-    // Exibe o saldo inicial da conta de Ana
     conta1.exibirSaldo();
 
-    // Ana transfere R$200 para Bruno
     conta1.transferir(200.0, conta2);
 
-    // Ana transfere R$300 divididos entre Bruno e Carla
     conta1.transferir(300.0, conta2, conta3);
 
-    // Exibição dos saldos finais
     cout << endl;
     conta1.exibirInformacoes();
     conta2.exibirInformacoes();
